@@ -13,11 +13,35 @@ export default async function rate(req: NextApiRequest, res: NextApiResponse) {
                 {
                     quotes: [
                         {
+                            code: 'USPS',
+                            display_name: 'USPS - Priority',
+                            cost: {
+                                currency: 'USD',
+                                amount: 5.99
+                            }
+                        },
+                        {
                             code: 'SAMP',
                             display_name: 'Sample Express',
                             cost: {
                                 currency: 'AUD',
-                                amount: 9.99
+                                amount: 19.99
+                            }
+                        },
+                        {
+                            code: 'FEDX1',
+                            display_name: 'FedEx Ground',
+                            cost: {
+                                currency: 'USD',
+                                amount: 1.99
+                            }
+                        },
+                        {
+                            code: 'FEDX2',
+                            display_name: 'FedEx 2-Day Air',
+                            cost: {
+                                currency: 'USD',
+                                amount: 15.99
                             }
                         }
                     ]
