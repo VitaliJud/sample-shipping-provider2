@@ -2,6 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function rate(req: NextApiRequest, res: NextApiResponse) {
     try {
+        // Log the incoming request payload
+        console.log('Received /rate request with payload:', req.body);
+
         // WIP - hardcoded response for the moment.
         res.status(200).json({
             quote_id: 'sample_shipping_provider',
