@@ -1,24 +1,24 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import pino from 'pino';
-import pinoPretty from 'pino-pretty';
+// import pino from 'pino';
+// import pinoPretty from 'pino-pretty';
 
-const stream = pinoPretty({
-    colorize: true
-});
+// const stream = pinoPretty({
+//     colorize: true
+// });
 
-const logger = pino(stream);
+// const logger = pino(stream);
 
 export default async function rate(req: NextApiRequest, res: NextApiResponse) {
     try {
         // Log the incoming request payload in chunks if it's too large
-        const payload = JSON.stringify(req.body);
-        if (payload.length > 1000) {
-            for (let i = 0; i < payload.length; i += 1000) {
-                logger.info(payload.substring(i, i + 1000));
-            }
-        } else {
-            logger.info('Received /rate request with payload:', req.body);
-        }
+        // const payload = JSON.stringify(req.body);
+        // if (payload.length > 1000) {
+        //     for (let i = 0; i < payload.length; i += 1000) {
+        //         logger.info(payload.substring(i, i + 1000));
+        //     }
+        // } else {
+        //     logger.info('Received /rate request with payload:', req.body);
+        // }
 
         // WIP - hardcoded response for the moment.
         res.status(200).json({
