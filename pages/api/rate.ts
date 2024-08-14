@@ -1,9 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import pino from 'pino';
+
+const logger = pino({
+    prettyPrint: { colorize: true }
+});
 
 export default async function rate(req: NextApiRequest, res: NextApiResponse) {
     try {
         // Log the incoming request payload
-        console.log('Received /rate request with payload:', req.body);
+        logger.info('Received /rate request with payload:', req.body);
 
         // WIP - hardcoded response for the moment.
         res.status(200).json({
